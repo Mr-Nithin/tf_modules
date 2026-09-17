@@ -10,8 +10,8 @@ resource "aws_eks_cluster" "this" {
   }
 
   vpc_config {
-    endpoint_private_access = false
-    endpoint_public_access  = true
+    endpoint_private_access = var.endpoint_private_access
+    endpoint_public_access  = var.endpoint_public_access
     subnet_ids              = var.subnet_ids
   }
 
@@ -19,4 +19,5 @@ resource "aws_eks_cluster" "this" {
   depends_on = [aws_iam_role_policy_attachment.this]
 
 }
+
 

@@ -8,6 +8,17 @@ variable "eks_version" {
   type        = string
 }
 
+variable "endpoint_public_access" {
+  description = "Enable public access ?"
+  type = bool
+}
+
+variable "endpoint_private_access" {
+  description = "Enable private acces ?"
+  type = bool
+}
+
+
 variable "deletion_protection" {
   description = "Do you want to protect from deltetion"
   type        = bool
