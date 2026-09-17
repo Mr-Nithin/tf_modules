@@ -23,6 +23,7 @@ source = "git::https://github.com/Mr-Nithin/tf_modules.git//master_network?ref=m
 source = "git::https://github.com/Mr-Nithin/tf_modules.git//master_eks?ref=master_eks-v0.2"
 ```
 ### Harden EKS 
+Use the default config.yaml and remove some of the tests if you do not need them 
 ```bash
-hardeneks --region REGION_NAME --cluster CLUSTER_NAME  --export-html report.html
+hardeneks --region REGION_NAME --cluster CLUSTER_NAME  --export-html report.html --config config.yaml
 ```
