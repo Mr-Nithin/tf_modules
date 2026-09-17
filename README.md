@@ -22,3 +22,7 @@ source = "git::https://github.com/Mr-Nithin/tf_modules.git//master_network?ref=m
 
 source = "git::https://github.com/Mr-Nithin/tf_modules.git//master_eks?ref=master_eks-v0.2"
 ```
+### Harden EKS 
+```bash
+hardeneks --region REGION_NAME --cluster CLUSTER_NAME  --export-html report.html
+```
