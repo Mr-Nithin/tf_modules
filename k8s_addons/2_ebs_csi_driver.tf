@@ -54,7 +54,7 @@ resource "aws_eks_pod_identity_association" "ebs_csi_driver" {
   cluster_name    = var.cluster_name
   namespace       = "kube-system"
   service_account = "ebs-csi-controller-sa"
-  role_arn        = aws_iam_role.ebs_csi_driver.arn
+  role_arn        = aws_iam_role.ebs_csi_driver[0].arn
 }
 
 # CMD to get the latest version 
@@ -63,5 +63,5 @@ resource "aws_eks_addon" "ebs_csi_driver" {
   cluster_name             = var.cluster_name
   addon_name               = "aws-ebs-csi-driver"
   addon_version            = "v1.66.0-eksbuild.1"
-  service_account_role_arn = aws_iam_role.ebs_csi_driver.arn
+  service_account_role_arn = aws_iam_role.ebs_csi_driver[0].arn
 }
