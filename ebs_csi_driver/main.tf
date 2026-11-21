@@ -15,16 +15,17 @@ resource "aws_iam_role_policy_attachment" "this" {
   policy_arn = aws_iam_policy.this.arn
 }
 
-variable "cluster_name" {
-  description = "Enter the name of the Cluster"
-  type = string
-}
-
 resource "aws_eks_pod_identity_association" "ebs" {
   cluster_name = var.cluster_name
   namespace = "kube-system"
   service_account = "ebs-csi-controller-sa"
   role_arn = aws_iam_role.this.arn
+}
+
+resource "aws_eks_addon" "pod_identity_agent" {
+  cluster_name = var.cluster_name 
+  addon_name = "aws-ebs-csi-driver"
+  addon_version = var.addon_version 
 }
 
 
