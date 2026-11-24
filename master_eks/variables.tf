@@ -10,12 +10,12 @@ variable "eks_version" {
 
 variable "endpoint_public_access" {
   description = "Enable public access ?"
-  type = bool
+  type        = bool
 }
 
 variable "endpoint_private_access" {
   description = "Enable private acces ?"
-  type = bool
+  type        = bool
 }
 
 

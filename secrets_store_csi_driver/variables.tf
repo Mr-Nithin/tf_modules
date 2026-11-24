@@ -1,8 +1,8 @@
 variable "cluster_name" {
-  type = string 
+  type = string
 }
 
 variable "addon_version" {
-  type = string
+  type    = string
   default = "v3.2.0-eksbuild.1"
 }

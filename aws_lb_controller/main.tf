@@ -31,11 +31,11 @@ resource "helm_release" "this" {
   namespace  = "kube-system"
   version    = var.chart_version
 
-    set = [
-    { name = "clusterName",          value = var.cluster_name },
-    { name = "vpcId",                value = var.vpc_id },
-    { name = "region",               value = var.region },
-    { name = "serviceAccount.name",  value = "aws-load-balancer-controller" },
+  set = [
+    { name = "clusterName", value = var.cluster_name },
+    { name = "vpcId", value = var.vpc_id },
+    { name = "region", value = var.region },
+    { name = "serviceAccount.name", value = "aws-load-balancer-controller" },
   ]
 
 }
